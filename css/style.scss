@@ -1,0 +1,287 @@
+html, body {   
+   overflow: hidden;
+}
+
+.invisible {
+   display: none;
+}
+
+.loader {
+   height: 100vh;
+   background-image: url("https://i.gifer.com/AIq4.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   opacity: 0.2;
+}
+
+.image-container {
+   position: relative;
+   text-align: center;
+   background-color: black;
+   .image-content {
+      min-height: 100vh;
+   }
+   .image {
+      height: 100vh;
+      max-width: auto;
+   }
+
+   .button-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      // background-color: black;
+      z-index: 20;
+
+      .first { 
+         text-align: left;
+         
+         img {
+            height: 40px;
+            width: 40px;
+         }
+      }
+      .second {
+         text-align: right;
+
+         img {
+            height: 40px;
+            width: 40px;
+         }
+        
+      }
+
+      .button-content {
+         height: 80px;
+         width: 80px;
+         padding: 15px;
+         background-color: none;
+      }
+
+      .btn {      
+         // background-color: none !important;
+         border-color: none !important;
+         color: white;
+         // height: 40px;
+         i {
+            font-size: 20px;
+            // opacity: 0.7;
+         }      
+         .fa-heart-broken {
+            color: #c11e1e;
+         }
+         .fa-expand {
+            color: black;
+         }
+
+         &:focus {
+            box-shadow: none;
+         }
+
+         // opacity: 1;
+         // transition: opacity 0.4s;
+
+         // &:hover {
+         //    opacity: .6;                        
+         // }         
+      }
+   }
+   .btn.favorite {
+      transform: scale(1); /* Default scale */
+      transition: transform 0.1s ease-in-out; /* Add a transition for a smooth effect */
+
+      &:hover {
+         animation: heartbeat 0.3s 2; /* Apply the heartbeat animation on hover 3 times */
+      }
+   }
+   @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+   .btn.reload {
+      transform: rotate(0);
+      transition: transform 0.1s;
+
+      &:hover {
+         transform: rotate(-180deg);
+         transition: transform 0.2s;
+      }
+   }
+
+   .btn.fullscreen {
+      transform: scale(1);
+      transition: transform 0.1s;
+
+      &:hover {
+         transform: scale(1.5);
+         transition: transform 0.2s;
+      }
+   }
+
+   .btn.safe {
+      transform: translateX(0); /* Default position */
+      transition: transform 0.2s ease-in-out; /* Add a transition for a smooth effect */
+
+      &:hover {
+         animation: shake 0.5s; /* Apply the shake animation on hover */
+      }
+   }
+
+   @keyframes shake {
+      0% { transform: translateX(0); } /* Start at the default position */
+      10%, 90% { transform: translateX(-2px); } /* Move left and right */
+      20%, 80% { transform: translateX(2px); } /* Move right and left */
+      30%, 50%, 70% { transform: translateX(-2px); } /* Move left and right */
+      40%, 60% { transform: translateX(2px); } /* Move right and left */
+   }
+
+   .btn.right {
+      transform: translateX(0); /* Default position */
+      transition: transform 0.4s ease-in-out; /* Add a transition for a smooth effect */
+      img {
+         max-width: 40px;
+         border-radius: 25px;
+         padding: 6px;
+         background: #0000003d;
+      }
+ 
+
+      &:hover {
+         animation: passToRight 1s forwards; /* Apply the pass to right animation on hover */
+      }
+   }
+
+   @keyframes passToRight {
+      from {
+        transform: translateX(0); /* Start at the default position */
+      }
+      to {
+        transform: translateX(20%); /* Move to the right */
+      }
+   }
+   
+   .btn.left {
+      transform: translateX(0); /* Default position */
+      transition: transform 0.4s ease-in-out; /* Add a transition for a smooth effect */
+      img {
+         max-width: 40px;
+         border-radius: 25px;
+         padding: 6px;
+         background: #0000003d;
+      }
+
+      &:hover {
+         animation: passToLeft 1s forwards; /* Apply the pass to right animation on hover */
+      }
+   }
+
+   @keyframes passToLeft {
+      from {
+        transform: translateX(0); /* Start at the default position */
+      }
+      to {
+        transform: translateX(-20%); /* Move to the left */
+      }
+   }
+
+   .button-container.top {
+      position: absolute;
+      top: -13px;
+      .button-content {
+         height: 80px;
+         width: 80px;
+         padding: 15px;
+         background-color: none;
+         img {
+            height: 40px;
+            width: 40px;
+         }
+      }
+   }
+
+   .safety-indicator {
+      color: #12bf12;
+      position: relative;
+      top: -34px;
+   }
+
+   .button-content.flag {
+      position: absolute;
+      top: 46vh;
+      
+   }
+}
+
+.blacklist {
+   &:hover {
+      animation: wind 3s ease-in-out infinite;
+   }
+  
+}
+
+@keyframes wind {
+   0% {
+     transform: translateX(0) rotate(0deg);
+   }
+   25% {
+     transform: translateX(10px) rotate(5deg);
+   }
+   50% {
+     transform: translateX(0) rotate(0deg);
+   }
+   75% {
+     transform: translateX(-10px) rotate(-5deg);
+   }
+   100% {
+     transform: translateX(0) rotate(0deg);
+   }
+ }
+
+
+.modal {
+
+   
+   .modal-content {
+      background-color: #000000d9;
+      color: white;
+
+      .modal-body {
+         background: darkgray;
+      }
+
+      .btn {
+         border-radius: 0px;
+         background-color: black;
+      }
+
+      .btn-orient {
+         background-color: unset;
+         width: 100%;
+
+         i {
+            font-size: 100px;
+         }
+
+         .landscape {
+            transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+         }
+
+         label {
+            display: none;
+         }
+      }
+
+   }
+
+   
+}
